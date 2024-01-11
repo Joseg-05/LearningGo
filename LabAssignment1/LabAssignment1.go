@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"math/rand"
+	"strings"
 )
 
 func main() {
@@ -42,7 +43,7 @@ func main() {
 	//To continue playing again
 	fmt.Println("Would you like to play again? Y or N")
 	fmt.Scan(&continueOn)
-	if continueOn == "y" {
+	if strings.ToLower(continueOn) == "y" {
 		main()
 	}
 }
