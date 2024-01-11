@@ -44,7 +44,7 @@ func displayPrompt() {
 
 	var average float32 = calculateAverage(studentData)
 
-	DisplayData(studentData, average)
+	displayData(studentData, average)
 }
 func calculateAverage(studentData student) float32 {
 	var sum int = 0
@@ -53,7 +53,7 @@ func calculateAverage(studentData student) float32 {
 	}
 	return float32(sum) / float32(len(studentData.grades))
 }
-func DisplayData(studentData student, average float32) {
+func displayData(studentData student, average float32) {
 	fmt.Printf("Name.............................%s \n", studentData.student_name)
 	fmt.Printf("Id Number.........................%d \n", studentData.student_id)
 	fmt.Printf("Test grades.........................%d, %d, %d, %d \n", studentData.grades[0], studentData.grades[1], studentData.grades[2], studentData.grades[3])
