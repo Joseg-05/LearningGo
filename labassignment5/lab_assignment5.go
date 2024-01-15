@@ -1,9 +1,9 @@
 package main
 
 import (
-	"fmt"
+	"LabAssignments/labassignment5/functions"
 )
 
 func main() {
-	fmt.Println()
+	functions.DisplayPrompt()
 }
