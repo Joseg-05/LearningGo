@@ -43,16 +43,15 @@ func (c *CD) NewCost(cost float32) {
 func (c *CD) UpdateQuantity(quantity int) int {
 	if c.quantity != 0 {
 		if c.quantity > quantity {
-			if (quantity - c.quantity) > 0 {
-				c.quantity = 0
-				return 0
-			} else {
-				c.quantity = c.quantity - quantity
-				return quantity
-			}
+			c.quantity = c.quantity - quantity
+			return quantity
+		} else {
+			whatisLeft := c.quantity
+			c.quantity = 0
+			return whatisLeft
 		}
 	}
-	return 0
+	return c.quantity
 }
 func (c CD) ReturnCost() float32 {
 	return c.cost

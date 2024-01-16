@@ -45,16 +45,15 @@ func (d *DVD) NewCost(cost float32) {
 func (d *DVD) UpdateQuantity(quantity int) int {
 	if d.quantity != 0 {
 		if d.quantity > quantity {
-			if (quantity - d.quantity) > 0 {
-				d.quantity = 0
-				return 0
-			} else {
-				d.quantity = d.quantity - quantity
-				return quantity
-			}
+			d.quantity = d.quantity - quantity
+			return quantity
+		} else {
+			whatisLeft := d.quantity
+			d.quantity = 0
+			return whatisLeft
 		}
 	}
-	return 0
+	return d.quantity
 }
 func (d DVD) ReturnCost() float32 {
 	return d.cost

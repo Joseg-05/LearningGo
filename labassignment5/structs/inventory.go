@@ -36,7 +36,7 @@ func (inv *Inventory) EnterSale(sku int, quantity int) SaleActions {
 			quantityReceived := data.UpdateQuantity(quantity)
 			var allWeHaveLeftMessage string = ""
 			if quantityReceived < quantity {
-				allWeHaveLeftMessage = fmt.Sprintf("we only have this %d in our inventory system", quantityReceived)
+				allWeHaveLeftMessage = fmt.Sprintf("we only have %d in our inventory system", quantityReceived)
 			}
 			saleOrder = Sale{sku: data.ReturnSKU(), quanity: quantityReceived, cost: data.ReturnCost(), message: allWeHaveLeftMessage}
 		}
